@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Interaction</title>
+</head>
+<body>
+    <h1>Add and Fetch Data from API</h1>
+    <button id="addDataButton">Add Data</button>
+    <button id="fetchDataButton">Fetch Data</button>
+    <pre id="output"></pre>
+
+    <script>
+        // Function to add new data using POST request
+        function addData() {
+            const newData = {
+                Name: 'Jane Doe',
+                Age: 25666,
+                Email: 'jane.doe@example.com'
+            };
+
+            fetch('http://localhost:8080/bq/api.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Data added:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        // Function to fetch data using GET request
+        function fetchData() {
+            fetch('http://localhost:8080/bq/api.php', {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Fetched data:', data);
+                // Display data on the HTML page
+                document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        // Add event listeners to buttons
+        document.getElementById('addDataButton').addEventListener('click', addData);
+        document.getElementById('fetchDataButton').addEventListener('click', fetchData);
+    </script>
+</body>
+</html>

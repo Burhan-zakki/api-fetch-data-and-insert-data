@@ -1,0 +1,27 @@
+[
+    {
+        "Name": "burhan zaki",
+        "Age": 25,
+        "Email": "zaki@example.com"
+    },
+    {
+        "Name": "Jane Doe",
+        "Age": 25,
+        "Email": "jane.doe@example.com"
+    },
+    {
+        "Name": "Jane 8787",
+        "Age": 25666,
+        "Email": "janee@example.com"
+    },
+    {
+        "Name": "hassan",
+        "Age": 25666,
+        "Email": "hassan65@example.com"
+    },
+    {
+        "Name": "Jane Doe",
+        "Age": 25666,
+        "Email": "jane.doe@example.com"
+    }
+]
